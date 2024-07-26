@@ -24,6 +24,8 @@ while True:
     if response.status_code == 200:  
       print("Success!")
       print(response.json())
+    else:
+      print(response.txt)
   kami(response)
   time.sleep(float(sle))
   response = requests.post(url, headers=headers)
