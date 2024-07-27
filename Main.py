@@ -19,16 +19,32 @@ headers = {
     "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36"
 }
 while True:
+  msg =""
   response = requests.get(url, headers=headers)
   def kami(response):
+    global msg
     if response.status_code == 200:  
       print("Success!")
-      print(response.json())
+      kami = response.json()
+      for key, value in kami.items():
+            msg += f"{key} : {value}\n"
     else:
-      print(response.txt)
+      print(response.text)
   kami(response)
   time.sleep(float(sle))
   response = requests.post(url, headers=headers)
   kami(response)
-  response = requests.post("https://cat-backend.pro/v1/auth/profile", headers=headers)
+  response = requests.get("https://cat-backend.pro/v1/auth/profile", headers=headers)
   kami(response)
+  my = f'''
+---------------------------------------------
+                                            
+            Kami
+data:
+{msg}
+
+
+
+---------------------------------------------
+'''
+  print(my)
