@@ -17,7 +17,7 @@ python3 Main.py
 <br>
 ez game aaaaaaaaaaaaaaaaaaaaaaaa
 link start Game :https://t.me/app_tap_cat_bot/AppTapCatBot?startapp=J5yApJ <br>
-# contact 
+# Contact
 <br>
 Telegram : https://t.me/kami2k1 <br>
 Zalo : https://zalo.me/quangz3
