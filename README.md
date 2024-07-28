@@ -8,7 +8,7 @@ python Main.py
 ```
 if linux :
 install python3
-apt or yum install python3 python3-pip
+apt or yum install python3 python3-pip -y
 ```bash
 pip3 install requests
 python3 Main.py
