@@ -16,7 +16,7 @@ python3 Main.py
 ```
 <br>
 ez game aaaaaaaaaaaaaaaaaaaaaaaa
-link start Game  [text](https://t.me/app_tap_cat_bot/AppTapCatBot?startapp=J5yApJ)
-#contact
-Telegram : https://t.me/kami2k1
+link start Game :https://t.me/app_tap_cat_bot/AppTapCatBot?startapp=J5yApJ <br>
+#contact <br>
+Telegram : https://t.me/kami2k1 <br>
 Zalo : https://zalo.me/quangz3
