@@ -1,4 +1,4 @@
-import requests , time
+import requests , time , threading
 token = input(str("TOKen You: "))
 sle = input(str("Thời gian Thu Thập tính bằng s: "))
 url = "https://cat-backend.pro/v1/points/mining"
@@ -18,24 +18,49 @@ headers = {
     "Sec-Fetch-Site": "cross-site",
     "User-Agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Mobile Safari/537.36"
 }
+stattickce = False
+def MiNIGame():
+ global stattickce
+ print("Play MiNiGame")
+ kami = True
+ while kami:
+     response = requests.get("https://cat-backend.pro/v1/games/mines-start", headers=headers)
+     print(response.status_code)
+     if response.status_code != 200:
+          kami = False
+          stattickce = False
+          continue
+     dataz = response.json()
+     ztrue = sum(sum(row) for row in dataz["playing_board"])
+     data ={"right_answers_amount":int(ztrue),"is_bombed":False}
+     response = requests.post("https://cat-backend.pro/v1/games/mines-start", headers=headers,json=data)
+     print(f"{response.json()}") 
+     time.sleep(3)
 while True:
   msg =""
   response = requests.get(url, headers=headers)
-  def kami(response):
-    global msg
+  def kami(response , type) -> None:
+    global msg , stattickce
     if response.status_code == 200:  
       print("Success!")
       kami = response.json()
       for key, value in kami.items():
             msg += f"{key} : {value}\n"
+      if int(type) ==1:
+        data =  int(kami['playing_tickets_amount'])
+        if data > 0 and stattickce == False:
+           stattickce = True
+           thread1 = threading.Thread(target=MiNIGame, args=())
+           thread1.start()
     else:
       print(response.text)
-  kami(response)
+  kami(response,2)
   time.sleep(float(sle))
   response = requests.post(url, headers=headers)
-  kami(response)
+  kami(response,2)
+  
   response = requests.get("https://cat-backend.pro/v1/auth/profile", headers=headers)
-  kami(response)
+  kami(response,type=1)
   my = f'''
 ---------------------------------------------
                                             
