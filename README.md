@@ -16,3 +16,4 @@ python3 Main.py
 ```
 <br>
 ez game aaaaaaaaaaaaaaaaaaaaaaaa
+link start Game  [text](https://t.me/app_tap_cat_bot/AppTapCatBot?startapp=J5yApJ)
